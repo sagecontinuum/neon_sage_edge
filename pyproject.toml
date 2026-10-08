@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neon-sage-edge"
+version = "0.1.0"
+description = "Read-only tools for the sage-kafka mirror: topics, messages, schema registry decoding and consumer groups."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "confluent-kafka>=2.4",
+    "pandas>=2.0",
+]
+
+[project.optional-dependencies]
+# Avro and JSON Schema deserializers for schema registry data
+registry = ["confluent-kafka[avro,json]>=2.4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
