@@ -21,8 +21,8 @@ class KafkaSettings:
     """How to connect to the Kafka cluster being read."""
 
     bootstrap_servers: str = "localhost:9094"
-    security_protocol: str = "SASL_PLAINTEXT"
-    username: str = "notebook"
+    security_protocol: str = "PLAINTEXT"
+    username: str = ""
     password: Optional[str] = None
     sasl_mechanism: str = "SCRAM-SHA-512"
     client_id: str = "neon-sage-edge"
